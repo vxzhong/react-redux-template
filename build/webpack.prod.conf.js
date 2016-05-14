@@ -15,6 +15,14 @@ module.exports = merge(baseWebpackConfig, {
     chunkFilename: path.join(config.build.assetsSubDirectory, '[id].[chunkhash].js')
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'eslint',
+        include: path.resolve(__dirname, '../'),
+        exclude: /node_modules/
+      }
+    ],
     loaders: cssLoaders({
       sourceMap: config.build.productionSourceMap,
       extract: true

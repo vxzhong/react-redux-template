@@ -19,21 +19,16 @@ module.exports = {
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'components': path.resolve(__dirname, '../src/components'),
+      'containers': path.resolve(__dirname, '../src/containers'),
+      'selectors': path.resolve(__dirname, '../src/selectors'),
+      'utils': path.resolve(__dirname, '../src/utils')
     }
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
-    preLoaders: [
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   loader: 'eslint',
-      //   include: projectRoot,
-      //   exclude: /node_modules/
-      // }
-    ],
     loaders: [
       {
         test: /\.(js|jsx)$/,
