@@ -1,25 +1,25 @@
-import { createStore, compose } from 'redux';
-import { persistState } from 'redux-devtools';
-import rootReducer from '../reducers';
-import DevTools from '../containers/DevTools';
 
-const enhancer = compose(
-  DevTools.instrument(),
-  persistState(
-    window.location.href.match(
-      /[?&]debug_session=([^&#]+)\b/
-    )
-  )
-);
+import { createStore, applyMiddleware } from 'redux'
 
-export default function configureStore(initialState) {
-  const store = createStore(rootReducer, initialState, enhancer);
+import rootReducer from '../reducers'
+
+export default function configure(initialState) {
+  const create = window.devToolsExtension
+    ? window.devToolsExtension()(createStore)
+    : createStore
+
+  // const createStoreWithMiddleware = applyMiddleware(
+  //   logger
+  // )(create)
+
+  const store = create(rootReducer, initialState)
 
   if (module.hot) {
-    module.hot.accept('../reducers', () =>
-      store.replaceReducer(require('../reducers').default)
-    );
+    module.hot.accept('../reducers', () => {
+      const nextReducer = require('../reducers')
+      store.replaceReducer(nextReducer)
+    })
   }
 
-  return store;
+  return store
 }
