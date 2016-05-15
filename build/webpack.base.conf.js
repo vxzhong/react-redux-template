@@ -29,6 +29,14 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
+    // preLoaders: [
+    //   {
+    //     test: /\.(js|jsx)$/,
+    //     loader: 'eslint',
+    //     include: path.resolve(__dirname, '../'),
+    //     exclude: /node_modules/
+    //   }
+    // ],
     loaders: [
       {
         test: /\.(js|jsx)$/,

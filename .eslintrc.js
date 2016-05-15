@@ -10,6 +10,12 @@ module.exports = {
       jsx: true
     }
   },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
   plugins: [
     'html',
     'react'
