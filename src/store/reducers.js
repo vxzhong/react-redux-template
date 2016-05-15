@@ -15,6 +15,6 @@ export default function createReducer (asyncReducers) {
   return combineReducers({
     routing: routerReducer,
     global: globalReducer,
-    ...asyncReducers
+    home: require('containers/HomePage/reducer').default
   })
 }
