@@ -22,7 +22,6 @@ export default function createRoutes (store) {
       path: '/',
       getComponent (location, cb) {
         require.ensure([], function (require) {
-          console.log('....')
           let page = require('containers/HomePage')
           let reducer = require('containers/HomePage/reducer')
           loadReducer(store, 'home')(reducer)
