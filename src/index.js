@@ -30,7 +30,7 @@ if (module.hot) {
         <Root store={store} history={history} />
       </AppContainer>
       ,
-      document.getElementById('app')
+      document.getElementById('root')
     )
   })
 }
