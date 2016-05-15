@@ -8,7 +8,7 @@
 
 import React from 'react'
 
-import styles from './styles.css'
+import styles from './styles.module.css'
 
 function Button (props) {
   const className = props.className ? props.className : styles.button

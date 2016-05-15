@@ -15,7 +15,7 @@ import ListItem from 'components/ListItem'
 import IssueIcon from 'components/IssueIcon'
 import A from 'components/A'
 
-import styles from './styles.css'
+import styles from './styles.module.css'
 
 export class RepoListItem extends React.Component {
   render () {
