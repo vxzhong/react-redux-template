@@ -22,7 +22,7 @@ if (module.hot) {
         <Root store={store} />
       </AppContainer>
       ,
-      document.getElementById('app')
+      document.getElementById('root')
     );
   });
 }
